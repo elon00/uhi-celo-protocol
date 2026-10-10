@@ -48,6 +48,11 @@ async function main() {
 
   // 3. Deploy ApexUHIToken
   console.log("\n[3/6] Deploying ApexUHIToken ($AUHI)...");
+  const treasuryAddress = process.env.TREASURY_MULTISIG && hre.ethers.isAddress(process.env.TREASURY_MULTISIG)
+    ? process.env.TREASURY_MULTISIG
+    : deployer.address;
+  console.log(`  -> Genesis Treasury Recipient: ${treasuryAddress}`);
+
   const initialSupply = hre.ethers.parseEther("1000000000"); // 1B Genesis
   const ApexUHIToken = await hre.ethers.getContractFactory("ApexUHIToken");
   const uhiToken = await ApexUHIToken.deploy(
@@ -55,7 +60,7 @@ async function main() {
     "AUHI",
     initialSupply,
     deployer.address,
-    deployer.address
+    treasuryAddress
   );
   await uhiToken.waitForDeployment();
   const uhiTokenAddress = await uhiToken.getAddress();
