@@ -4,9 +4,10 @@
   "description": "Apex Universal High Income (ApexUHI) - Post-Quantum Autonomous Wealth & Agentic Micropayment Protocol on Celo L2",
   "main": "hardhat.config.js",
   "scripts": {
+    "setup:wallet": "node scripts/setup-wallet.js",
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "all": "hardhat compile && hardhat test && hardhat run scripts/tick-conway-epoch.js && hardhat run scripts/agent-x402-client.js",
+    "all": "node scripts/setup-wallet.js && hardhat compile && hardhat test && hardhat run scripts/tick-conway-epoch.js && hardhat run scripts/agent-x402-client.js",
     "deploy:alfajores": "hardhat run scripts/deploy.js --network alfajores",
     "deploy:mainnet": "hardhat run scripts/deploy-mainnet.js --network celo",
     "tick:conway": "hardhat run scripts/tick-conway-epoch.js",
