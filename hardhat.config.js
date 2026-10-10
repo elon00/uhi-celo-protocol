@@ -26,7 +26,7 @@ module.exports = {
     },
     // Celo Alfajores Testnet
     alfajores: {
-      url: process.env.CELO_ALFAJORES_RPC || "https://alfajores-forno.celo.org",
+      url: process.env.CELO_ALFAJORES_RPC || "https://alfajores-forno.celo-testnet.org",
       accounts: [PRIVATE_KEY],
       chainId: 44787,
       gasPrice: 5000000000, // 5 Gwei
