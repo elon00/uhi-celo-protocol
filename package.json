@@ -6,10 +6,11 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
+    "all": "hardhat compile && hardhat test && hardhat run scripts/tick-conway-epoch.js && hardhat run scripts/agent-x402-client.js",
     "deploy:alfajores": "hardhat run scripts/deploy.js --network alfajores",
     "deploy:mainnet": "hardhat run scripts/deploy-mainnet.js --network celo",
-    "simulate:conway": "hardhat run scripts/simulate-conway.js",
-    "demo:agent": "hardhat run scripts/agent-x402-demo.js"
+    "tick:conway": "hardhat run scripts/tick-conway-epoch.js",
+    "client:x402": "hardhat run scripts/agent-x402-client.js"
   },
   "keywords": [
     "celo",
