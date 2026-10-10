@@ -1,0 +1,33 @@
+{
+  "name": "apex-uhi-protocol",
+  "version": "1.0.0",
+  "description": "Apex Universal High Income (ApexUHI) - Post-Quantum Autonomous Wealth & Agentic Micropayment Protocol on Celo L2",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:alfajores": "hardhat run scripts/deploy.js --network alfajores",
+    "deploy:mainnet": "hardhat run scripts/deploy-mainnet.js --network celo",
+    "simulate:conway": "hardhat run scripts/simulate-conway.js",
+    "demo:agent": "hardhat run scripts/agent-x402-demo.js"
+  },
+  "keywords": [
+    "celo",
+    "universal-high-income",
+    "uhi",
+    "tokenomics",
+    "x402",
+    "conway-automaton",
+    "post-quantum",
+    "ai-agents",
+    "defi"
+  ],
+  "author": "ApexUHI Foundation",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.6"
+  }
+}
