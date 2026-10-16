@@ -31,5 +31,13 @@
     "@openzeppelin/contracts": "^5.0.2",
     "dotenv": "^16.4.5",
     "hardhat": "^2.22.6"
+  },
+  "overrides": {
+    "ws": ">=8.18.0",
+    "lodash": ">=4.17.21",
+    "serialize-javascript": ">=6.0.2",
+    "diff": ">=7.0.0",
+    "cookie": ">=0.7.0",
+    "tmp": ">=0.2.3"
   }
 }

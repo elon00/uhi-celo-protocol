@@ -1,0 +1,37 @@
+name: ApexUHI Celo Protocol CI & Reality Gates
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  test-and-verify:
+    name: Hardhat Test Suite & Reality Simulation Gates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Compile Contracts
+        run: npx hardhat compile
+
+      - name: Run ApexUHI Full Reality Test Suite
+        run: npx hardhat test
+
+      - name: Execute Conway Automaton Live Cellular Tick
+        run: npx hardhat run scripts/tick-conway-epoch.js
+
+      - name: Execute Autonomous Agent HTTP 402 Payment Client
+        run: npx hardhat run scripts/agent-x402-client.js
